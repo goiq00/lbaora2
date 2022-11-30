@@ -73,5 +73,10 @@ namespace lbaora2
         {
            
         }
+
+        private void поискToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,29 +13,29 @@ namespace lbaora2
     {
         private string namestudent;
         private int id;
-        /*private DateTime date;
+        private DateTime date;
         private string institute;
         private string group;
         private string course;
-        private float avgmark;*/
+        private double avgmark;
 
         public Student()
         {
         }
 
-        public Student(string Namestudent, int Id)//, DateTime Date, string Institute, string Group, string Course, float Avgmark)
+        public Student(string StudentName, int Id, DateTime Date, string Institute, string Group, string Course, double Avgmark)
         {
             id = Id;
-            namestudent = Namestudent;
-            /*Date = date;
+            namestudent = StudentName;
+            date = Date;
             institute = Institute;
-            Group = group;
-            Course = course;
-            Avgmark = avgmark;*/
-
+            group = Group;
+            course = Course;
+            avgmark = Avgmark;
+           
 
         }
-        public string Namestudent
+        public string Name
         {
             get
             {
@@ -56,11 +57,68 @@ namespace lbaora2
                 id = value;
             }
         }
+        public DateTime Date
+        {
+            get
+            {
+                return date;
 
+            }
+            set 
+            {
+                date = value;
+            }
+        }
+        public string Institute
+        { 
+            get
+            { 
+                return institute; 
+            } set 
+            {
+                institute = value; 
+            }
+        }
+        public string Group
+        {
+            get
+            {
+                return group;
+            }
+            set 
+            {
+                group = value; 
+            }
+        }
+        public string Course
+        {
+            get
+            {
+                return course;
+
+            }
+            set
+            {
+                course = value;
+            }
+        }
+        public double Avgmark
+        {
+            get
+            {
+                return avgmark;
+
+            }
+            set
+            {
+                avgmark = value;
+            }
+        }
     }
     public static class Data
     {
         public static Student[] students = new Student[2];
+        
        
     }
     internal static class Program
@@ -71,8 +129,9 @@ namespace lbaora2
         [STAThread]
         static void Main()
         {
-            Data.students[0] = new Student("Vanya", 21);
-            Data.students[1] = new Student("fedya", 31);
+            
+            Data.students[0] = new Student("Vanya", 21, new DateTime(2004,11,13)  ,"Иткн","десятая","четвертый", 4.3);
+            Data.students[1] = new Student("fedya", 31, new DateTime(2004, 11, 03), "Иткн", "десятая", "четвертый", 4.3);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
