@@ -78,5 +78,10 @@ namespace lbaora2
         {
 
         }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
