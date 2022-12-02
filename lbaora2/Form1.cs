@@ -35,8 +35,8 @@ namespace lbaora2
         {
             
             
-            dataGridView1.DataSource = Data.students;
-
+            dataGridView1.DataSource = Data.filteredStudents;
+            
         }
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +82,21 @@ namespace lbaora2
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void info_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void infoPanel_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
