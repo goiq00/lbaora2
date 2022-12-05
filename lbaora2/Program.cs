@@ -124,17 +124,19 @@ namespace lbaora2
     
     public static class Data
     {
-        public static Student[] students = new Student[2];
+        public static Student[] students = new Student[3];
         public static string filter = "Vanya";
         public static List<Student> filteredStudents = new List<Student>() ;
         public static void ApplyFilter()
         {
-            foreach(Student student in students)
+            filteredStudents = new List<Student>();
+            foreach (Student student in students)
             {
+
                 if(filter == student.namestudent)
                 {
                     filteredStudents.Add(student);
-                }
+                } 
             }
         }
     }
@@ -152,7 +154,8 @@ namespace lbaora2
         {
 
             Data.students[0] = new Student("Vanya", 21, new DateTime(2004,11,13)  ,"Иткн","десятая","четвертый", 4.3);
-            Data.students[1] = new Student("fedya", 31, new DateTime(2004, 11, 03), "Иткн", "десятая", "четвертый", 4.3);
+            Data.students[1] = new Student("Vanya", 22, new DateTime(2004, 11, 13), "Иткн", "десятая", "четвертый", 4.3);
+            Data.students[2] = new Student("fedya", 31, new DateTime(2004, 11, 03), "Иткн", "десятая", "четвертый", 4.3);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Data.ApplyFilter();
