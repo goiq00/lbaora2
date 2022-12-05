@@ -102,12 +102,21 @@ namespace lbaora2
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
             Data.filter = textBox1.Text;
-            Data.ApplyFilter();
-            string s = String.Join(",", Data.filteredStudents);
-            statusBar.Text = $"Поставили фильтр {Data.filter} {s}";
-            dataGridView1.Refresh();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = Data.filteredStudents;
+            
+            if(textBox1.Text=="")
+            {
+                dataGridView1.DataSource = Data.students;
+            }
+            else
+            {
+                Data.ApplyFilter();
+                string s = String.Join(",", Data.filteredStudents);
+                statusBar.Text = $"Поставили фильтр {Data.filter} {s}";
+                dataGridView1.Refresh();
+                dataGridView1.DataSource = null; 
+                dataGridView1.DataSource = Data.filteredStudents;
+
+            }
         }
     }
 }
