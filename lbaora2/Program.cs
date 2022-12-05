@@ -125,7 +125,7 @@ namespace lbaora2
     public static class Data
     {
         public static Student[] students = new Student[3];
-        public static string filter = "Vanya";
+        public static string filter = "";
         public static List<Student> filteredStudents = new List<Student>() ;
         public static void ApplyFilter()
         {
@@ -133,7 +133,7 @@ namespace lbaora2
             foreach (Student student in students)
             {
 
-                if(filter == student.namestudent)
+                if( student.namestudent.Contains(filter)|| filter=="")
                 {
                     filteredStudents.Add(student);
                 } 
