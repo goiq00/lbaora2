@@ -110,13 +110,32 @@ namespace lbaora2
             else
             {
                 Data.ApplyFilter();
-                string s = String.Join(",", Data.filteredStudents);
+                string s = String.Join("", Data.filteredStudents);
                 statusBar.Text = $"Поставили фильтр {Data.filter} {s}";
                 dataGridView1.Refresh();
                 dataGridView1.DataSource = null; 
                 dataGridView1.DataSource = Data.filteredStudents;
 
             }
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusBar.Text = "Сохранено в students.json";
+            Data.Save();
+        }
+
+        private void загрузитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusBar.Text = "Загружено из файла students.json";
+            Data.Load();
+            textBox1.Text = "";
+            dataGridView1.DataSource= Data.students;
         }
     }
 }

@@ -1,10 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.IO;
+using System.Web;
 
 namespace lbaora2
 
@@ -127,6 +126,7 @@ namespace lbaora2
         public static List<Student> students = new List<Student>();
         public static string filter = "";
         public static List<Student> filteredStudents = new List<Student>() ;
+        public static string filename = "students.json";
         public static void ApplyFilter()
         {
             filteredStudents = new List<Student>();
@@ -138,6 +138,20 @@ namespace lbaora2
                     filteredStudents.Add(student);
                 } 
             }
+        }
+
+        public static void Load()
+        {
+         //Читаем студентов из файла
+         string json=File.ReadAllText(filename);
+         students = JsonSerializer.Deserialize<List<Student>>(json);
+        }
+
+        public static void Save()
+        {
+            //Сохраняем студентов в файл
+            string json = JsonSerializer.Serialize(students);
+            File.WriteAllText(filename,json);
         }
     }
 
@@ -153,12 +167,12 @@ namespace lbaora2
         static void Main()
         {
 
-            Data.students.Add( new Student("Vanya", 21, new DateTime(2004,11,13)  ,"Иткн","БИВТ-22-10","1", 4.3));
-            Data.students.Add( new Student("Vanya", 22, new DateTime(2004, 11, 13), "Иткн", "десятая", "четвертый", 4.3));
-            Data.students.Add(new Student("fedya", 31, new DateTime(2004, 11, 03), "Иткн", "десятая", "четвертый", 4.3));
+           // Data.students.Add( new Student("Vanya", 21, new DateTime(2004,11,13)  ,"Иткн","БИВТ-22-10","1", 4.3));
+           // Data.students.Add( new Student("Vanya", 22, new DateTime(2004, 11, 13), "Иткн", "десятая", "четвертый", 4.3));
+           //Data.students.Add(new Student("fedya", 31, new DateTime(2004, 11, 03), "Иткн", "десятая", "четвертый", 4.3));
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Data.ApplyFilter();
+            //Data.ApplyFilter();
             Application.Run(new Form1());
            
              
