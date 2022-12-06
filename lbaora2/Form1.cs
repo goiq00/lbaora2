@@ -151,8 +151,17 @@ namespace lbaora2
 
         private void удалитьВыделенныхToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusBar.Text = "удаляем выделенных";
-
+            statusBar.Text = $"удаляем выделенных ";
+            foreach(DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                statusBar.Text +=$"удаляю этого студента {row.DataBoundItem}";
+                Data.Delete((Student) row.DataBoundItem);
+            }
+             
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = Data.students;
+            textBox1.Text = "";
         }
     }
 }

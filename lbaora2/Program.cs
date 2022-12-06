@@ -147,6 +147,10 @@ namespace lbaora2
         {
             students.Add(new Student("", 00, new DateTime(1900, 01, 01), "Иткн", "БИВТ-22-10", "1", 0.0));
         }
+        public static void Delete(Student target)
+        {
+            students.Remove(target);
+        }
     }
 
 
