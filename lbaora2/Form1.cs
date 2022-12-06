@@ -81,6 +81,7 @@ namespace lbaora2
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Data.Save();
             Application.Exit();
         }
 
@@ -136,6 +137,22 @@ namespace lbaora2
             Data.Load();
             textBox1.Text = "";
             dataGridView1.DataSource= Data.students;
+        }
+
+        private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Data.New();
+            dataGridView1.Refresh();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = Data.students;
+            textBox1.Text = "";
+           
+        }
+
+        private void удалитьВыделенныхToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusBar.Text = "удаляем выделенных";
+
         }
     }
 }

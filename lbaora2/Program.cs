@@ -116,6 +116,7 @@ namespace lbaora2
         public static string filter = "";
         public static List<Student> filteredStudents = new List<Student>() ;
         public static string filename = "students.json";
+        public static Student voidstudent = new Student(" ",00 ,new DateTime(1900,01,01) ," ",""," ", 0.0) ;
         public static void ApplyFilter()
         {
             filteredStudents = new List<Student>();
@@ -141,6 +142,10 @@ namespace lbaora2
             //Сохраняем студентов в файл
             string json = JsonSerializer.Serialize(students);
             File.WriteAllText(filename,json);
+        }
+        public static void New()
+        {
+            students.Add(new Student("", 00, new DateTime(1900, 01, 01), "Иткн", "БИВТ-22-10", "1", 0.0));
         }
     }
 
