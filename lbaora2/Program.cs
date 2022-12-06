@@ -4,51 +4,51 @@ using System.Windows.Forms;
 using System.Text.Json;
 using System.IO;
 using System.Web;
+using System.Drawing.Text;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace lbaora2
 
 {
-    
-    public class Student
+    public class Human
     {
-        public string namestudent;
+        public string name { get; set; }
+        public DateTime date { get; set; }
+
+        public Human(string Name, DateTime Date)
+        {
+            this.name = name;
+            this.date = date;
+        }
+
+    }
+  
+    public class Student:Human
+    {
         private int id;
-        private DateTime date;
         private string institute;
         private string group;
         private string course;
         private double avgmark;
-       
-        public Student()
-        {
-        }
         
-        public Student(string StudentName, int Id, DateTime Date, string Institute, string Group, string Course, double Avgmark)
+ 
+        
+       
+        
+        public Student(string Name , int Id,DateTime Date,  string Institute, string Group, string Course, double Avgmark): base(Name,Date)
         {
             id = Id;
-            namestudent = StudentName;
-            date = Date;
             institute = Institute;
             group = Group;
             course = Course;
             avgmark = Avgmark;
-            
-            
+            date = Date;
+            name = Name;
            
 
         }
         
-        public string Name
-        {
-            get
-            {
-                return namestudent;
-            }
-            set
-            {
-                namestudent = value;
-            }
-        }
+        
         public int Id
         {
             get
@@ -60,18 +60,7 @@ namespace lbaora2
                 id = value;
             }
         }
-        public DateTime Date
-        {
-            get
-            {
-                return date;
-
-            }
-            set 
-            {
-                date = value;
-            }
-        }
+        
         public string Institute
         { 
             get
@@ -133,7 +122,7 @@ namespace lbaora2
             foreach (Student student in students)
             {
 
-                if( student.namestudent.Contains(filter)|| filter=="")
+                if( student.name.Contains(filter)|| filter=="")
                 {
                     filteredStudents.Add(student);
                 } 
