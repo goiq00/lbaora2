@@ -201,5 +201,10 @@ namespace lbaora2
             }
             Data.SaveExport(nes);
         }
+
+        private void выводКолваСтудентовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusBar.Text = $" количество студентов {Data.NumStudents()}";
+        }
     }
 }

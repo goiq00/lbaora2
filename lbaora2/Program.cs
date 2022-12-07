@@ -185,16 +185,23 @@ namespace lbaora2
         public static void DateFilter()
         {
             filteredStudents.Clear();
-            foreach(Student student in students)
+            foreach (Student student in students)
             {
-                if (student.date == datefilter||datefilter== null)
+                if (student.date == datefilter || datefilter == null)
                 {
                     filteredStudents.Add(student);
 
                 }
             }
+        }
+        public static void Avarage()
+        {
 
-
+        }
+        public static int NumStudents()
+        {
+            int count =Data.students.Count();
+            return count;
         }
     }
 
