@@ -130,6 +130,7 @@ namespace lbaora2
         public static string filter = "";
         public static List<Student> filteredStudents = new List<Student>() ;
         public static string filename = "students.json";
+        public static DateTime? datefilter = null;
         
         public static void ApplyFilter()
         {
@@ -164,6 +165,21 @@ namespace lbaora2
         public static void Delete(Student target)
         {
             students.Remove(target);
+            
+        }
+        public static void DateFilter()
+        {
+            filteredStudents.Clear();
+            foreach(Student student in students)
+            {
+                if (student.date == datefilter||datefilter== null)
+                {
+                    filteredStudents.Add(student);
+
+                }
+            }
+
+
         }
     }
 

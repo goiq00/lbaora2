@@ -11,6 +11,7 @@ using System.Data.OleDb;
 using System.IO;
 using System.Web;
 using System.Security.Cryptography.X509Certificates;
+using System.Globalization;
 
 namespace lbaora2
 {
@@ -162,6 +163,30 @@ namespace lbaora2
             dataGridView1.Refresh();
             dataGridView1.DataSource = Data.students;
             textBox1.Text = "";
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+
+        {
+            DateTime mydate=DateTime.Now;
+             if(DateTime.TryParse(textBox2.Text, CultureInfo.CreateSpecificCulture("ru-RU"), DateTimeStyles.None,out  mydate))
+             {
+                statusBar.Text = $"получилось парсе {mydate}";
+               
+                Data.datefilter = mydate;
+                Data.DateFilter();
+                dataGridView1.DataSource = null;
+                dataGridView1.Refresh();
+                dataGridView1.DataSource = Data.filteredStudents;
+                
+
+            }
+            else
+            {
+                statusBar.Text = "не получилось :(";
+                dataGridView1.DataSource = Data.students;
+            }
+            
         }
     }
 }
