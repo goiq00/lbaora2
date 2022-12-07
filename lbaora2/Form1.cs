@@ -35,7 +35,7 @@ namespace lbaora2
         {
             
             
-            dataGridView1.DataSource = Data.filteredStudents;
+            dataGridView1.DataSource = Data.students;
             
         }
 

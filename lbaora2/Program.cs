@@ -20,7 +20,10 @@ namespace lbaora2
             this.name = name;
             this.date = date;
         }
+        public Human()
+        {
 
+        }
     }
   
     public class Student:Human
@@ -34,7 +37,16 @@ namespace lbaora2
  
         
        
-        
+        public Student():base()
+        {
+            this.name = "";
+            this.date = new DateTime(1900,12,11);
+            this.id = 0;
+            this.institute = "";
+            this.group = "";
+            this.course = "";
+            this.avgmark = 0;
+        }
         public Student(string Name , int Id,DateTime Date,  string Institute, string Group, string Course, double Avgmark): base(Name,Date)
         {
             id = Id;
@@ -106,6 +118,8 @@ namespace lbaora2
                 avgmark = value;
             }
         }
+        
+        
     }
 
     
@@ -116,7 +130,7 @@ namespace lbaora2
         public static string filter = "";
         public static List<Student> filteredStudents = new List<Student>() ;
         public static string filename = "students.json";
-        public static Student voidstudent = new Student(" ",00 ,new DateTime(1900,01,01) ," ",""," ", 0.0) ;
+        
         public static void ApplyFilter()
         {
             filteredStudents = new List<Student>();
@@ -145,7 +159,7 @@ namespace lbaora2
         }
         public static void New()
         {
-            students.Add(new Student("", 00, new DateTime(1900, 01, 01), "Иткн", "БИВТ-22-10", "1", 0.0));
+            students.Add(new Student());
         }
         public static void Delete(Student target)
         {
