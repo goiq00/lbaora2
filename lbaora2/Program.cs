@@ -194,9 +194,15 @@ namespace lbaora2
                 }
             }
         }
-        public static void Avarage()
+        public static double Avarage()
         {
-
+            double mark = 0;
+            foreach (Student student in students)
+            {
+                
+                mark += student.Avgmark;
+            }
+            return mark / Data.NumStudents();
         }
         public static int NumStudents()
         {

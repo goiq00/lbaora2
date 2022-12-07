@@ -206,5 +206,10 @@ namespace lbaora2
         {
             statusBar.Text = $" количество студентов {Data.NumStudents()}";
         }
+
+        private void выводСреднейОценкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            statusBar.Text=$"средняя оценка : {Data.Avarage()}";
+        }
     }
 }

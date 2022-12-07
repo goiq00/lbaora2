@@ -42,6 +42,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.сохранитьВыбранноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выводКолваСтудентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выводСреднейОценкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -86,7 +87,8 @@
             this.создатьToolStripMenuItem,
             this.удалитьВыделенныхToolStripMenuItem,
             this.сохранитьВыбранноеToolStripMenuItem,
-            this.выводКолваСтудентовToolStripMenuItem});
+            this.выводКолваСтудентовToolStripMenuItem,
+            this.выводСреднейОценкиToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -166,6 +168,13 @@
             this.выводКолваСтудентовToolStripMenuItem.Text = "Вывод кол-ва студентов";
             this.выводКолваСтудентовToolStripMenuItem.Click += new System.EventHandler(this.выводКолваСтудентовToolStripMenuItem_Click);
             // 
+            // выводСреднейОценкиToolStripMenuItem
+            // 
+            this.выводСреднейОценкиToolStripMenuItem.Name = "выводСреднейОценкиToolStripMenuItem";
+            this.выводСреднейОценкиToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.выводСреднейОценкиToolStripMenuItem.Text = "Вывод средней оценки";
+            this.выводСреднейОценкиToolStripMenuItem.Click += new System.EventHandler(this.выводСреднейОценкиToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -206,6 +215,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.ToolStripMenuItem сохранитьВыбранноеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выводКолваСтудентовToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выводСреднейОценкиToolStripMenuItem;
     }
 }
 
