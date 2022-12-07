@@ -6,6 +6,7 @@ using System.IO;
 using System.Web;
 using System.Drawing.Text;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Linq;
 
 namespace lbaora2
 
@@ -131,7 +132,9 @@ namespace lbaora2
         public static List<Student> filteredStudents = new List<Student>() ;
         public static string filename = "students.json";
         public static DateTime? datefilter = null;
+        public static string exportfilename = "chosenstudents.json";
         
+        //фильтр по имени
         public static void ApplyFilter()
         {
             filteredStudents = new List<Student>();
@@ -144,29 +147,41 @@ namespace lbaora2
                 } 
             }
         }
+        //сохранение выделенных студентов
+        public static void SaveExport(List<Student> bandstudents)
+        {
+            
+            string json = JsonSerializer.Serialize(bandstudents);
+            File.WriteAllText(exportfilename, json);
 
+
+        }
+        //загрузка из файла
         public static void Load()
         {
          //Читаем студентов из файла
          string json=File.ReadAllText(filename);
          students = JsonSerializer.Deserialize<List<Student>>(json);
         }
-
+        //сохранение в файл
         public static void Save()
         {
             //Сохраняем студентов в файл
             string json = JsonSerializer.Serialize(students);
             File.WriteAllText(filename,json);
         }
+        //добавление нового студента
         public static void New()
         {
             students.Add(new Student());
         }
+        //удаление
         public static void Delete(Student target)
         {
             students.Remove(target);
             
         }
+        //поиск по дате
         public static void DateFilter()
         {
             filteredStudents.Clear();

@@ -40,6 +40,7 @@
             this.statusBar = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.сохранитьВыбранноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -82,7 +83,8 @@
             this.загрузитьToolStripMenuItem,
             this.выходToolStripMenuItem,
             this.создатьToolStripMenuItem,
-            this.удалитьВыделенныхToolStripMenuItem});
+            this.удалитьВыделенныхToolStripMenuItem,
+            this.сохранитьВыбранноеToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
             this.файлToolStripMenuItem.Text = "Файл";
@@ -148,6 +150,13 @@
             this.textBox2.TabIndex = 4;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // сохранитьВыбранноеToolStripMenuItem
+            // 
+            this.сохранитьВыбранноеToolStripMenuItem.Name = "сохранитьВыбранноеToolStripMenuItem";
+            this.сохранитьВыбранноеToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
+            this.сохранитьВыбранноеToolStripMenuItem.Text = "Сохранить Выбраное";
+            this.сохранитьВыбранноеToolStripMenuItem.Click += new System.EventHandler(this.сохранитьВыбранноеToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -186,6 +195,7 @@
         private System.Windows.Forms.ToolStripMenuItem создатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem удалитьВыделенныхToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ToolStripMenuItem сохранитьВыбранноеToolStripMenuItem;
     }
 }
 

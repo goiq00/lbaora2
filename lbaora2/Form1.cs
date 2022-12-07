@@ -188,5 +188,18 @@ namespace lbaora2
             }
             
         }
+
+        private void сохранитьВыбранноеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            List<Student> nes = new List<Student>();
+            statusBar.Text = $"Сохраняем выбранных{dataGridView1.SelectedRows}";
+            foreach (DataGridViewRow row in dataGridView1.SelectedRows)
+            {
+                
+                nes.Add((Student)row.DataBoundItem);
+                statusBar.Text +=  $" Сохранили  {row.DataBoundItem} ";
+            }
+            Data.SaveExport(nes);
+        }
     }
 }
