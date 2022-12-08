@@ -133,19 +133,28 @@ namespace lbaora2
         public static string filename = "students.json";
         public static DateTime? datefilter = null;
         public static string exportfilename = "chosenstudents.json";
+
+
+        public static IEnumerable<Student> test = null;
+
         
         //фильтр по имени
         public static void ApplyFilter()
         {
-            filteredStudents = new List<Student>();
-            foreach (Student student in students)
-            {
+            filteredStudents.Clear();
+            IEnumerable<Student> studentQuery =
+                from student in students
+                where student.name.Contains(filter)
+                  select student;
+            filteredStudents.AddRange(studentQuery);    
+            //foreach (Student student in students)
+            //{
 
-                if( student.name.Contains(filter)|| filter=="")
-                {
-                    filteredStudents.Add(student);
-                } 
-            }
+            //  if( student.name.Contains(filter)|| filter=="")
+            //{
+            //        filteredStudents.Add(student);
+            //} 
+            //}
         }
         //сохранение выделенных студентов
         public static void SaveExport(List<Student> bandstudents)
