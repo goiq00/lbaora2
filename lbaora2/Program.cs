@@ -136,10 +136,8 @@ namespace lbaora2
 
 
         public static IEnumerable<Student> test = null;
-
-        
-        //фильтр по имени
-        public static void ApplyFilter()
+         //фильтр по имени
+         public static void ApplyFilter()
         {
             filteredStudents.Clear();
             IEnumerable<Student> studentQuery =
@@ -147,14 +145,7 @@ namespace lbaora2
                 where student.name.Contains(filter)
                   select student;
             filteredStudents.AddRange(studentQuery);    
-            //foreach (Student student in students)
-            //{
-
-            //  if( student.name.Contains(filter)|| filter=="")
-            //{
-            //        filteredStudents.Add(student);
-            //} 
-            //}
+           
         }
         //сохранение выделенных студентов
         public static void SaveExport(List<Student> bandstudents)
@@ -194,14 +185,11 @@ namespace lbaora2
         public static void DateFilter()
         {
             filteredStudents.Clear();
-            foreach (Student student in students)
-            {
-                if (student.date == datefilter || datefilter == null)
-                {
-                    filteredStudents.Add(student);
-
-                }
-            }
+            IEnumerable<Student> studentQuerry=
+                from student in students
+                where student.date==datefilter
+                select student;
+            filteredStudents.AddRange(studentQuerry);
         }
         public static double Avarage()
         {

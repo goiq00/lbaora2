@@ -37,12 +37,12 @@
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.удалитьВыделенныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusBar = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.сохранитьВыбранноеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выводКолваСтудентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выводСреднейОценкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusBar = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -90,43 +90,64 @@
             this.выводКолваСтудентовToolStripMenuItem,
             this.выводСреднейОценкиToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 24);
+            this.файлToolStripMenuItem.Size = new System.Drawing.Size(59, 26);
             this.файлToolStripMenuItem.Text = "Файл";
             // 
             // сохранитьToolStripMenuItem
             // 
             this.сохранитьToolStripMenuItem.Name = "сохранитьToolStripMenuItem";
-            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.сохранитьToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.сохранитьToolStripMenuItem.Text = "Сохранить";
             this.сохранитьToolStripMenuItem.Click += new System.EventHandler(this.сохранитьToolStripMenuItem_Click);
             // 
             // загрузитьToolStripMenuItem
             // 
             this.загрузитьToolStripMenuItem.Name = "загрузитьToolStripMenuItem";
-            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.загрузитьToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.загрузитьToolStripMenuItem.Text = "Загрузить";
             this.загрузитьToolStripMenuItem.Click += new System.EventHandler(this.загрузитьToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
             // создатьToolStripMenuItem
             // 
             this.создатьToolStripMenuItem.Name = "создатьToolStripMenuItem";
-            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.создатьToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.создатьToolStripMenuItem.Text = "Создать";
             this.создатьToolStripMenuItem.Click += new System.EventHandler(this.создатьToolStripMenuItem_Click);
             // 
             // удалитьВыделенныхToolStripMenuItem
             // 
             this.удалитьВыделенныхToolStripMenuItem.Name = "удалитьВыделенныхToolStripMenuItem";
-            this.удалитьВыделенныхToolStripMenuItem.Size = new System.Drawing.Size(239, 26);
+            this.удалитьВыделенныхToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
             this.удалитьВыделенныхToolStripMenuItem.Text = "Удалить выделенных";
             this.удалитьВыделенныхToolStripMenuItem.Click += new System.EventHandler(this.удалитьВыделенныхToolStripMenuItem_Click);
+            // 
+            // сохранитьВыбранноеToolStripMenuItem
+            // 
+            this.сохранитьВыбранноеToolStripMenuItem.Name = "сохранитьВыбранноеToolStripMenuItem";
+            this.сохранитьВыбранноеToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.сохранитьВыбранноеToolStripMenuItem.Text = "Сохранить Выбраное";
+            this.сохранитьВыбранноеToolStripMenuItem.Click += new System.EventHandler(this.сохранитьВыбранноеToolStripMenuItem_Click);
+            // 
+            // выводКолваСтудентовToolStripMenuItem
+            // 
+            this.выводКолваСтудентовToolStripMenuItem.Name = "выводКолваСтудентовToolStripMenuItem";
+            this.выводКолваСтудентовToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.выводКолваСтудентовToolStripMenuItem.Text = "Вывод кол-ва студентов";
+            this.выводКолваСтудентовToolStripMenuItem.Click += new System.EventHandler(this.выводКолваСтудентовToolStripMenuItem_Click);
+            // 
+            // выводСреднейОценкиToolStripMenuItem
+            // 
+            this.выводСреднейОценкиToolStripMenuItem.Name = "выводСреднейОценкиToolStripMenuItem";
+            this.выводСреднейОценкиToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
+            this.выводСреднейОценкиToolStripMenuItem.Text = "Вывод средней оценки";
+            this.выводСреднейОценкиToolStripMenuItem.Click += new System.EventHandler(this.выводСреднейОценкиToolStripMenuItem_Click);
             // 
             // statusBar
             // 
@@ -153,27 +174,6 @@
             this.textBox2.Size = new System.Drawing.Size(158, 22);
             this.textBox2.TabIndex = 4;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // сохранитьВыбранноеToolStripMenuItem
-            // 
-            this.сохранитьВыбранноеToolStripMenuItem.Name = "сохранитьВыбранноеToolStripMenuItem";
-            this.сохранитьВыбранноеToolStripMenuItem.Size = new System.Drawing.Size(242, 26);
-            this.сохранитьВыбранноеToolStripMenuItem.Text = "Сохранить Выбраное";
-            this.сохранитьВыбранноеToolStripMenuItem.Click += new System.EventHandler(this.сохранитьВыбранноеToolStripMenuItem_Click);
-            // 
-            // выводКолваСтудентовToolStripMenuItem
-            // 
-            this.выводКолваСтудентовToolStripMenuItem.Name = "выводКолваСтудентовToolStripMenuItem";
-            this.выводКолваСтудентовToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
-            this.выводКолваСтудентовToolStripMenuItem.Text = "Вывод кол-ва студентов";
-            this.выводКолваСтудентовToolStripMenuItem.Click += new System.EventHandler(this.выводКолваСтудентовToolStripMenuItem_Click);
-            // 
-            // выводСреднейОценкиToolStripMenuItem
-            // 
-            this.выводСреднейОценкиToolStripMenuItem.Name = "выводСреднейОценкиToolStripMenuItem";
-            this.выводСреднейОценкиToolStripMenuItem.Size = new System.Drawing.Size(259, 26);
-            this.выводСреднейОценкиToolStripMenuItem.Text = "Вывод средней оценки";
-            this.выводСреднейОценкиToolStripMenuItem.Click += new System.EventHandler(this.выводСреднейОценкиToolStripMenuItem_Click);
             // 
             // Form1
             // 
